@@ -1,12 +1,12 @@
 import {create} from 'zustand'
-// import { Transaction } from '../models/transaction';
+import { Transaction } from '../models/transaction';
 
 interface useModalStoreprops{
   modalIsOpen:boolean
-  // selectedTransaction: Transaction | null;
+  selectedTransaction: Transaction | null;
 
 
-  onModalOpen: () => void
+  onModalOpen: (data:Transaction) => void  
   onModalClose: () => void
 }
 
@@ -15,17 +15,17 @@ export const useModalStore = create<useModalStoreprops>((set,) => ({
   modalIsOpen:false,
   selectedTransaction:null,
 
-  onModalOpen: () => {
+  onModalOpen: (payload) => {
     set({ 
       modalIsOpen: true,
-      // selectedTransaction: payload
-      // selectedTransaction: payload
+      selectedTransaction: payload
+
      });
   },
   onModalClose: () => {
     set({ 
       modalIsOpen: false,
-      // selectedTransaction: null
+      selectedTransaction: null
      });
   },
   
