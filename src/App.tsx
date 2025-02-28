@@ -8,17 +8,19 @@ import ProfilePage from "./pages/ProfilePage";
 import NotFoundPage from "./pages/NotFoundPage";
 import { Toaster } from 'react-hot-toast'
 import { options } from "./lib/hotToast";
-import { useThemeStore } from "./store/useThemeStore";
+
 import Layout from "./components/layout/Layout";
 import { Container } from "./components/container/Container";
+import { useAuthStore } from "./store/useAuthStore";
+import { useEffect } from "react";
 
 
 function App() {
-    const {token} = useThemeStore()
-  // const { userId, checkAuth , token,  } = useAuthStore();
-  // useEffect(() => {
-  //   checkAuth() 
-  // }, [userId]);
+   
+  const { userId, checkAuth , token,  } = useAuthStore();
+  useEffect(() => {
+    checkAuth() 
+  }, [userId]);
 
 
   return (
