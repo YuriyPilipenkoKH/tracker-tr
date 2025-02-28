@@ -4,17 +4,57 @@
 
 
 :root {
+  --current-color: #B92F2C;
+  --primary-text-color: #f7f7f7;
+  --secondary-text-color: #212121;
+  --add-text-color: #8c8c8c;
+  --footer-text-color: #545454;
+  /* --background-color: #f7f7f7; */
+  --backdrop-color: #00000033;
+  --overlay-color: #00000066;
+  --body-color: #cad9d9;
+  --react-color: #00ccec;
+  --orange: orange;
+  --white: #ffffff;
+  --black: #010101;
+  --bright-green: #12e319;
+  --green: #0A8817;
+  --red: #B92F2C;
+  --blue: #2196f3;
+  --yellow: #f8d24e;
+  --lauren: #A4C495;
+  --crimson: #dc143c;
+  --teal: #008080;
+  --grey: #f7f7f7;
+  --orange: #ffa500;
+  --purple: #9797e8;
+  --beige: #f5f5dc;
+  --adelyn: #C204B9;
+  --chamomile: #E9DBC4;
+
   --background-color: #738260;
   --text-color: #212121;
   --card-color: #e3ecc0;
   --accent-color: #555;
   --hover: #3333f5;
+
+  --grey: #293138;
+  --blue: #2C70DA;
+  --white: #EDF3F8;
+  --soft-green: #9DB88F;
+  --vivid-green: #7CE3B3;
+  --orange: #FB6D3A;
+  --dark: #7772;
   --modal-bg: #A4C495;
   --input-color: #333;
   --input-bg: #cbc4b0;
   --sec-color: #233049 ;
   --card-bg: #c9ccc3;
 }
+
+/* root[data-theme='light'] {
+} */
+
 :root[data-theme='dark'] {
   --background-color: #000916;
   --text-color: #f5f6f7;
@@ -27,6 +67,7 @@
   --sec-color: #6b7280 ;
   --card-bg: #072b40;
 }
+
 body {
   color: var(--text-color);
   background: var(--background-color);
@@ -52,3 +93,134 @@ body {
 *{
   box-sizing: border-box;
 } 
+
+
+h1,h2,h3,h4,h5,h6,p {
+  margin: 0;
+}
+
+ul {
+list-style: none;
+  padding: 0;
+}
+
+li{
+  padding: 0;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+.hidden{
+  display: none;
+}
+
+/* Hide arrows*/
+@layer base {
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    @apply appearance-none;
+  }
+  input[type="number"] {
+    @apply [appearance:textfield];
+  }
+}
+
+.g11{
+  background-color: #0172b8;
+  border-radius:  12px 0 0 12px;
+}
+.g12{
+  background-color: #957a05;
+  border-radius: 0 12px 12px 0;
+}
+.n12{
+  display: grid;
+  grid-template-columns: 65% auto ;
+  grid-template-rows: repeat(3, 24px);
+  grid-template-areas:
+  'name . amount'
+  'des . zoom '
+  'cat . total'  ;
+
+  grid-row-gap: 12px;
+  grid-column-gap: 2px;
+
+  width: 100%;
+  border-radius: 12px;
+  border:2px solid #555;
+  padding: 1.25rem /* 20px */;
+  background-color:  var(--card-bg);
+  transition: all 0.8s ease-in-out;
+
+  &>.name{
+    grid-area: name;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+    transition: all 0.8s ease-in-out;
+  }
+  &>.edit{
+    grid-area: edit;
+    justify-self: center;
+    transition: all 0.8s ease-in-out;
+  }
+  &>.des{
+    grid-area: des;
+    font-weight: 300;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+    transition: all 0.8s ease-in-out;
+  }
+  &>.zoom{
+    grid-area: zoom;
+    justify-self: end;
+    transition: all 0.8s ease-in-out;
+  }
+  &>.cat{
+    grid-area: cat;
+    color: var(--sec-color);
+    font-size: 0.875rem /* 14px */;
+    line-height: 1.25rem /* 20px */;
+    transition: all 0.8s ease-in-out;
+  }
+  &>.total{
+    grid-area: total;
+    justify-self: end;
+    color: var(--sec-color);
+    font-size: 0.875rem /* 14px */;
+    line-height: 1.25rem /* 20px */;
+    transition: all 0.8s ease-in-out;
+  }
+  &>.amount{
+    grid-area: amount;
+    justify-self: end;
+    transition: all 0.8s ease-in-out;
+  }
+
+}
+.Label_number{
+  &>input.t-pls{
+    color: var(--green) ;
+  }
+  &>input.t-min{
+    color: var(--orange) ;
+  }
+}
+
+
+
+
+/* Hide arrows in Chrome, Safari, Edge, and Opera */
+/* input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+} */
+
+/* Hide arrows in Firefox */
+/* input[type="number"] {
+  -moz-appearance: textfield;
+} */
