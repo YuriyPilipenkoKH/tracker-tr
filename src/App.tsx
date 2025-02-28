@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { LuContainer } from "react-icons/lu";
+
 import { Navigate, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import SignUpPage from "./pages/SignUpPage";
@@ -11,6 +10,7 @@ import { Toaster } from 'react-hot-toast'
 import { options } from "./lib/hotToast";
 import { useThemeStore } from "./store/useThemeStore";
 import Layout from "./components/layout/Layout";
+import { Container } from "./components/container/Container";
 
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
 
   return (
     <>
-      <LuContainer>
+      <Container>
         <Routes>
         <Route path="/" element={<Layout />}>
         <Route index element={< HomePage />}/>
@@ -48,7 +48,7 @@ function App() {
             element={<NotFoundPage />} />
           </Route>
         </Routes>
-      </LuContainer>
+      </Container>
 
       <Toaster 
        position="top-center" 
