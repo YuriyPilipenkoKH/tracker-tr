@@ -28,8 +28,6 @@ const EditTransactionForm: React.FC<EditTransactionFormProps> = ({
       register, 
       handleSubmit,
       formState,
-      reset,
-      clearErrors,
     } = useForm<Transaction>({
       defaultValues: {  
         amount:selectedTransaction?.amount,

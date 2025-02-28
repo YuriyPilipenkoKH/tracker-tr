@@ -4,8 +4,6 @@ import { Transaction, updatingSchemaType } from '../models/transaction'
 import { err, loginResponse, pagination } from '../types'
 import { axios } from '../lib/axios'
 
-
-
 interface FinanceStoreTypes {
   totalBalance: number 
   transactions: Transaction[]
