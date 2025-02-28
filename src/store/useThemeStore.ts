@@ -2,11 +2,13 @@ import {create} from 'zustand'
 
 interface useThemeStoreProps{
   theme: "light" | "dark"
+  token:string
   toggleTheme: () => void
 }
 
 export const useThemeStore = create<useThemeStoreProps>((set,get) => ({
   theme : 'dark',
+  token: '',
 
   toggleTheme: () => {
     const {theme}  = get();
