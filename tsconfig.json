@@ -8,6 +8,7 @@
     "noUnusedLocals": false, // Prevents highlighting unused local variables
     "noUnusedParameters": false, // Prevents highlighting unused function parameters
     "baseUrl": ".",
+    "outDir": "dist",
     "paths": {
       "@/*": ["src/*"] // Map `@/` to the `src` folder
     }
