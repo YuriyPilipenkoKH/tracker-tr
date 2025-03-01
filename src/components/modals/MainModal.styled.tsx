@@ -41,7 +41,7 @@ export const ModalOverlay = styled.div`
   background-color: #00000029;
   display: grid;
   place-items: center;
-  z-index: 5;
+  z-index: 20;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.8s, visibility 0.8ms; 
@@ -65,7 +65,7 @@ export const ModalContainer = styled.div`
   background-color: var(--card-color);
   padding: 60px 20px;
   border-radius: 16px;
-  z-index: 70;
+  z-index: 30;
   color: var(--text-color);
   @media screen and (min-width: 768px) {
     width: 500px;
