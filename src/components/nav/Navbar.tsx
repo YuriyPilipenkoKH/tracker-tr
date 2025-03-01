@@ -40,7 +40,9 @@ const Navbar = () => {
               : (path === '/profile' ) 
                 ? 'Dashboard'
                 : (path === '/dashboard' ) && 'Tracker' 
-             : 'Login' }
+             : (path === '/login' ) 
+             ? ''
+            : 'Login' }
             </DeskWrap>
             <MobileWrap className="gap-8 MobileWrap ">
             {token 
@@ -49,6 +51,8 @@ const Navbar = () => {
               : (path === '/profile' ) 
                 ? <MdOutlineDashboardCustomize size={25}/>
                 : (path === '/dashboard' ) && <FaSackDollar size={25}/>
+            : (path === '/login' ) 
+             ? ''
              : <MdOutlineLogin size={25}/> }
             </MobileWrap>
           </StyledFlatLink>

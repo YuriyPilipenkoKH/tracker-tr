@@ -44,28 +44,28 @@ export const ModalOverlay = styled.div`
   z-index: 5;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.5s, visibility 0.5ms; 
+  transition: opacity 0.8s, visibility 0.8ms; 
 
 
   
 &.modal.active {
   opacity: 1;
   visibility: visible;
-  transition: opacity 0.5ms;
+  transition: opacity 0.8ms;
 }
 `;
 
 export const ModalContainer = styled.div`
 
-  width: 360px;
+  width: 320px;
   position: relative;
   display: grid;
   place-items: center;
-  gap: 20px;  
-  background-color: #0d0da7;
+  gap: 16px;  
+  background-color: var(--card-color);
   padding: 60px 20px;
   border-radius: 16px;
-  z-index: 7;
+  z-index: 70;
   color: var(--text-color);
   @media screen and (min-width: 768px) {
     width: 500px;

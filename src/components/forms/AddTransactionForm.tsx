@@ -46,19 +46,17 @@ const AddTransactionForm: React.FC<AddTransactionFormProps> = () => {
 
 
     const onSubmit = async (data: addingNewSchemaType) => {
-      console.log(data);
+
       const sanitizedData = {
         ...data,
         amount: Math.abs(data.amount), // Convert to absolute value
       };
       const finalAmount = sign === "-" ? -sanitizedData.amount : sanitizedData.amount;
-      console.log("Final Transaction:", finalAmount);
       const finalData = {
         ...data,
         amount:finalAmount,
         total: refreshTotalBalance(finalAmount)
       }
-      console.log('finalAmount',finalData)
       const response = await newTransaction(finalData)
 
         if(response?.success){
@@ -70,17 +68,13 @@ const AddTransactionForm: React.FC<AddTransactionFormProps> = () => {
             })
            }
           toast.success(response.message)
-          // console.log(response.message);
           clearErrors()
           reset()
-          // setOpen(false)
         } 
 
     }
     const changeSign = (e: React.ChangeEvent<HTMLInputElement>) => {
-      // setValue("sign", e.target.value as "+" | "-")
       setSign(e.target.value as "+" | "-")
-      console.log(sign);
     }
     const refreshTotalBalance =(value: number) =>  {
      const result =  totalBalance + value
@@ -101,7 +95,7 @@ const AddTransactionForm: React.FC<AddTransactionFormProps> = () => {
     className='relative flex flex-col w-full gap-3 px-1 pt-12 pb-6'
     autoComplete="off"
     noValidate>
-      <div className="absolute Sign-color right-9 top-[65px] z-50 flex gap-6 items-center justify-center">
+      <div className="absolute Sign-color right-9 top-[62px] z-10 flex gap-6 items-center justify-center">
           <label className="flex items-center justify-center gap-1 cursor-pointer">
             <input
               type="radio"

@@ -8,12 +8,12 @@ const LoginPage = () => {
     <div className=" grid transition-all duration-800 ease-in-out">
     <div className="flex flex-col justify-center items-center ">
       <div className="w-full max-w-md space-y-8">
-      <h2 className="text-center text-lg font-bold">LogIn</h2>
+      <h2 className="text-center text-lg font-bold">Enter</h2>
       <LoginForm />
       <div className="text-center">
           <p className="text-base-content/60">
             Need an account?{" "}
-            <Link to="/signup" className="link link-primary">
+            <Link to="/signup" className="link link-primary text-blue-800">
               Sign Up
             </Link>
           </p>

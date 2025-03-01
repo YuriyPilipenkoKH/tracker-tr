@@ -45,17 +45,15 @@ const EditTransactionForm: React.FC<EditTransactionFormProps> = ({
       } = formState
 
     const onSubmit = async (data: updatingSchemaType) => {
-      console.log(data);
+
       const finalData = {
         ...data,
         _id:selectedTransaction?._id,
       }
-      console.log('finalAmount',finalData)
       const response = await updateTransaction(finalData)
       if(response?.success){
         console.log(response);
         toast.success(response.message)
-        // console.log(response.message);
         clearAnyError({error: 'nameError'})
         onModalClose()
       }

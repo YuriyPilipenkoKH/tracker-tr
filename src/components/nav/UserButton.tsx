@@ -9,13 +9,24 @@ const UserButton = () => {
     : ''
   return (
     <>
-    <button 
-    className='w-12 h-12 rounded-full bg-[var(--accent-color)] font-bold'
-    onClick={() => navigate('/profile')}> 
-      {userInitial}
-    </button>
+    <div className='avatar__wrapp'>
+      <button
+      className='w-12 h-12 rounded-full bg-[var(--accent-color)] font-bold'
+      onClick={() => navigate('/profile')}>
+        {authUser?.image  ? (
+        <img
+        src={authUser?.image}
+        alt="Profile image"
+        className="userimage rounded-full"
+      />
+        )  : userInitial}
+
+      </button>
+    </div>
   </>
   )
 }
 
 export default UserButton
+
+//{userInitial}
