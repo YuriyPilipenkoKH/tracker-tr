@@ -9,15 +9,15 @@ const UserButton = () => {
     : ''
   return (
     <>
-    <div className='avatar__wrapp'>
+    <div className='avatar__wrapp flex items-center '>
       <button
       className='w-12 h-12 rounded-full bg-[var(--accent-color)] font-bold'
       onClick={() => navigate('/profile')}>
         {authUser?.image  ? (
         <img
         src={authUser?.image}
-        alt="Profile image"
-        className="userimage rounded-full"
+        alt="Profile image" 
+        className="userimage rounded-full w-12 h-12"
       />
         )  : userInitial}
 
